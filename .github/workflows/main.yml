@@ -25,6 +25,9 @@ jobs:
     - name: install azure-cli-ml      
       run: az extension add -n azure-cli-ml     
       
+    - name: attach workspace
+      run: az ml folder attach -w ml-ws -g myresourcegroup
+
     - name: retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
 
