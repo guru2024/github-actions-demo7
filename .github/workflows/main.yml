@@ -20,7 +20,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: set auto-install of extensions
-      run: az config set
+      run: az config set extension.auto_install=On
 
     - name: attach workspace
       run: az ml folder attach -w "ml-ws" -g "shim.yohan.2012-rg"
