@@ -39,5 +39,5 @@ jobs:
       with:
         context: ./
         file: ./Dockerfile
-        push: true
+        push: false
         tags: shimyohan2012/flask-ys:latest
