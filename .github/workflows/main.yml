@@ -23,7 +23,7 @@ jobs:
       run: az config set
 
     - name: attach workspace
-      run: az ml folder attach -w "ml-ws" -g "practical-mlops"
+      run: az ml folder attach -w "ml-ws" -g "shim.yohan.2012-rg"
 
     - name: retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
@@ -34,4 +34,4 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: false
-        tags: alfredodeza/flask-roberta:latest
+        tags: shimyohan2012/flask-ys:latest
