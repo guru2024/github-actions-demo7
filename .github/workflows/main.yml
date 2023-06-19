@@ -23,7 +23,7 @@ jobs:
       run: az config set extensions.dynamic_install=yes_without_prompt
 
     - name: attach workspace
-      run: az ml workspace set -w "ml-ws" -g "practical-mlops"
+      run: az ml workspace set -w "ml-ws" -g "shim.yohan.2012-rg"
 
     - name: retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
