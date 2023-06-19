@@ -29,7 +29,7 @@ jobs:
       run: az extension add -n azure-cli-ml
 
     - name: Attach workspace
-      run: az ml folder attach -w ml-ws -g myresourcegroup
+      run: az ml folder attach -w ml-ws -g shim.yohan.2012-rg
 
     - name: Retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
