@@ -23,8 +23,7 @@ jobs:
       run: az config set extension.auto_install=On
 
     - name: attach workspace
-      run: az ml file upload --workspace-name "ml-ws" --resource-group "shim.yohan.2012-rg"
-
+      run: az ml workspace set -w "ml-ws" -g "practical-mlops"
 
     - name: retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
