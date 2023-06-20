@@ -40,24 +40,24 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-    - name: Build flask-app container and push to DockerHub registry
+    - name: Build and push Flask-App container to Docker Hub registry
       uses: docker/build-push-action@v2
       with:
         context: ./
         file: ./Dockerfile
         push: true
         tags: shimyohan2012/flask-ys:latest
-        
+
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v1
       with:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GH_REGISTRY }}
-    
-    - name: Build flask-app and push to GitHub registry
+
+    - name: Build and push Flask-App to GitHub registry
       uses: docker/build-push-action@v2
       with:
         context: ./
         tags: ghcr.io/guru2024/flask-ys:latest
-        push: true      
+        push: true    
